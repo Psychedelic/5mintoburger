@@ -1,0 +1,4 @@
+five_min_to_burger:
+    resource: "@FiveMinToBurgerBundle/Resources/config/routing.yml"
+    prefix:   /
+

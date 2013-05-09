@@ -1,0 +1,7 @@
+parameters:
+#    five_min_to_burger.example.class: FiveMinTo\BurgerBundle\Example
+
+services:
+#    five_min_to_burger.example:
+#        class: %five_min_to_burger.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

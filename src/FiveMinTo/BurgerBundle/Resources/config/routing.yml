@@ -1,0 +1,3 @@
+five_min_to_burger_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: FiveMinToBurgerBundle:Default:index }
