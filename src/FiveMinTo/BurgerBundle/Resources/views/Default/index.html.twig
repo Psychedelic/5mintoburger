@@ -1,1 +1,22 @@
-Hello {{ name }}!
+{# src/FiveMinTo/BurgerBundle/Resources/views/layout.html.twig #}
+ 
+{% extends "::layout.html.twig" %}
+ 
+{% block title %}
+  Back-end - {{ parent() }}
+{% endblock %}
+ 
+{% block body %}
+ 
+  {# On définit un sous-titre commun à toutes les pages du bundle, par exemple #}
+  <h1>Gestion des burgers</h1>
+  
+  Hello {{ name }}!
+ 
+  <hr>
+ 
+  {# On définit un nouveau bloc, que les vues du bundle pourront remplir #}
+  {% block sdzblog_body %}
+  {% endblock %}
+ 
+{% endblock %}
