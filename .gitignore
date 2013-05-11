@@ -6,7 +6,9 @@ vendor/*
 */logs/*
 */cache/*
 web/uploads/*
-web/bundles/*
+web/bundles/acmedemo
+web/bundles/framework
+web/bundles/sensiodistribution
 
 # Configuration files
 app/config/parameters.ini
