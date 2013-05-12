@@ -13,7 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
 class Burger
 {
 	/**
-	 * @ORM\OneToOne(targetEntity="FiveMinTo\BurgerBundle\Entity\Burger")
+	 * @ORM\OneToOne(targetEntity="FiveMinTo\BurgerBundle\Entity\Vote")
 	 */
 	 private $vote;
 	
