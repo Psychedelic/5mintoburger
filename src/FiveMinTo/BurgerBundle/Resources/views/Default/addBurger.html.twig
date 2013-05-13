@@ -1,0 +1,19 @@
+{# src/FiveMinTo/BurgerBundle/Resources/views/layout.html.twig #}
+ 
+{% extends "::layout.html.twig" %}
+ 
+{% block title %}
+  {{ parent() }} - Burger
+{% endblock %}
+ 
+{% block body %}
+ 
+  <h1>Ajouter un burger</h1>
+  
+  <form action="{{ path("five_min_to_burger_add_burger") }}" method="post">
+  	{{ form_widget(form) }}
+  	<input type="submit">
+  </form>
+
+ 
+{% endblock %}
