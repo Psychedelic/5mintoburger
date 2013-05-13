@@ -15,7 +15,6 @@ class Burger
 
 	function __construct(){
 		$this->dateCreationBurger = new \DateTime();
-		
 	}
 
 	/**
@@ -344,27 +343,4 @@ class Burger
         return $this->metaTitle;
     }
 
-
-    /**
-     * Set vote
-     *
-     * @param \FiveMinTo\BurgerBundle\Entity\Vote $vote
-     * @return Burger
-     */
-    public function setVote(\FiveMinTo\BurgerBundle\Entity\Vote $vote = null)
-    {
-        $this->vote = $vote;
-    
-        return $this;
-    }
-
-    /**
-     * Get vote
-     *
-     * @return \FiveMinTo\BurgerBundle\Entity\Vote 
-     */
-    public function getVote()
-    {
-        return $this->vote;
-    }
 }
