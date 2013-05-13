@@ -12,6 +12,12 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Burger
 {
+
+	function __construct(){
+		$this->dateCreationBurger(new \DateTime());
+	}
+
+
 	/**
 	 * @ORM\OneToOne(targetEntity="FiveMinTo\BurgerBundle\Entity\Vote")
 	 */
