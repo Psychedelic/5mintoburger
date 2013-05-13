@@ -20,15 +20,11 @@ class AddBurgerController extends Controller
     	$request = $this->getRequest();
     	if($request->isMethod('POST')){
 	    	$form->bindRequest($request);
-	    
-  	    	$vote = new Vote();
-	    	$vote->setVotePositif(0);	    	
-	    	$vote->setVoteNegatif(0);
-	    	$em->persist($vote);
-	    	$em->flush();
-	    
 	    	$burger = $form->getData();
-	    	$burger->setVote($vote);
+	    		    
+	    	$em->persist($burger->getVote());
+	    	$em->flush();
+
 	    	$em->persist($burger);
 	    	$em->flush();
 	    	

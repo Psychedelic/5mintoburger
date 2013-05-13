@@ -15,7 +15,11 @@ class Burger
 
 	function __construct(){
 		$this->dateCreationBurger = new \DateTime();
-		
+		$vote = new Vote();
+	    $vote->setVotePositif(0);	    	
+	   	$vote->setVoteNegatif(0);
+	   	
+	   	$this->setVote($vote);
 	}
 
 	/**
