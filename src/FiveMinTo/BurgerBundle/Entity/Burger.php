@@ -84,21 +84,21 @@ class Burger
     /**
      * @var string
      *
-     * @ORM\Column(name="metaKeywords", type="text", nullable=true)
+     * @ORM\Column(name="metaKeywords", type="text")
      */
     private $metaKeywords;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="metaDescription", type="text", nullable=true)
+     * @ORM\Column(name="metaDescription", type="text")
      */
     private $metaDescription;
     
     /**
      * @var string
      *
-     * @ORM\Column(name="metaTitle", type="text", nullable=true)
+     * @ORM\Column(name="metaTitle", type="text")
      */
     private $metaTitle;
 
