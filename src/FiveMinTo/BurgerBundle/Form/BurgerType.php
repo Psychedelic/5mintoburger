@@ -17,11 +17,9 @@ class BurgerType extends AbstractType
             ->add('urlPhotoBurger')
             ->add('urlVideoBurger')
             ->add('descriptionBurger')
-            ->add('dateCreationBurger')
             ->add('metaKeywords')
             ->add('metaDescription')
             ->add('metaTitle')
-            ->add('vote')
         ;
     }
 
