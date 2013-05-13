@@ -13,7 +13,17 @@ class AddBurgerController extends Controller
     {
     	$em = $this->container->get('doctrine')->getManager();
     	
-    	$form = $this->createForm(new BurgerType());
+    	$burger = new Burger();
+    	$form = $this->createForm(new BurgerType(), $burger);
+    	
+    	$request = $this->getRequest();
+    	if($request->isMethod('POST')){
+	    	$form->bindRequest($request);
+	    	
+	    	$burger = $form->getData();
+	    	$em->persist($burger);
+	    	$em->flush();
+    	}
     	
         return $this->render('FiveMinToBurgerBundle:Default:addBurger.html.twig', array(
         	'form' => $form->createView(),

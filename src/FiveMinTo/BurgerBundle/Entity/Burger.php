@@ -14,7 +14,7 @@ class Burger
 {
 
 	function __construct(){
-		$this->dateCreationBurger(new \DateTime());
+		$this->dateCreationBurger = new \DateTime();
 	}
 
 
