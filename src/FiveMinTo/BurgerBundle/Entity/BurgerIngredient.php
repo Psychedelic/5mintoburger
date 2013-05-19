@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class BurgerIngredient
 {
+	
     /**
      * @ORM\Id
      * @ORM\ManyToOne(targetEntity="FiveMinTo\BurgerBundle\Entity\Burger")

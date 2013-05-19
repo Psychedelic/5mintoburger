@@ -6,6 +6,8 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
+use FiveMinTo\BurgerBundle\Form\BurgerIngredientType;
+
 class BurgerType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
@@ -20,7 +22,11 @@ class BurgerType extends AbstractType
             ->add('metaKeywords', 		'textarea', array('required' => false))
             ->add('metaDescription', 	'textarea', array('required' => false))
             ->add('metaTitle', 			'textarea', array('required' => false))
-        ;
+            ->add('burgerIngredient', 'collection', array(
+                'type' => new BurgerIngredientType(),
+                'allow_add' => true,
+                'by_reference' => false,	
+            ));
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)

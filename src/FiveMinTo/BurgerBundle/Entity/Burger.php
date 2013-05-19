@@ -21,6 +21,11 @@ class Burger
 	   	
 	   	$this->setVote($vote);
 	}
+	
+	/**
+     * @ORM\OneToMany(targetEntity="FiveMinTo\BurgerBundle\Entity\BurgerIngredient", mappedBy="burger")
+     */
+    private $burgerIngredient;
 
 	/**
 	 * @ORM\OneToOne(targetEntity="FiveMinTo\BurgerBundle\Entity\Vote")
@@ -370,5 +375,38 @@ class Burger
     public function getVote()
     {
         return $this->vote;
+    }
+
+    /**
+     * Add burgerIngredient
+     *
+     * @param \FiveMinTo\BurgerBundle\Entity\BurgerIngredient $burgerIngredient
+     * @return Burger
+     */
+    public function addBurgerIngredient(\FiveMinTo\BurgerBundle\Entity\BurgerIngredient $burgerIngredient)
+    {
+        $this->burgerIngredient[] = $burgerIngredient;
+    
+        return $this;
+    }
+
+    /**
+     * Remove burgerIngredient
+     *
+     * @param \FiveMinTo\BurgerBundle\Entity\BurgerIngredient $burgerIngredient
+     */
+    public function removeBurgerIngredient(\FiveMinTo\BurgerBundle\Entity\BurgerIngredient $burgerIngredient)
+    {
+        $this->burgerIngredient->removeElement($burgerIngredient);
+    }
+
+    /**
+     * Get burgerIngredient
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getBurgerIngredient()
+    {
+        return $this->burgerIngredient;
     }
 }

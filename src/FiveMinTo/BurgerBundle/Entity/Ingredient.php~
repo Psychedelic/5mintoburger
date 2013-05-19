@@ -96,44 +96,4 @@ class Ingredient
     {
         return $this->nomIngredientPluriel;
     }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->ingredient = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-    
-    /**
-     * Add ingredient
-     *
-     * @param \FiveMinTo\BurgerBundle\Entity\BurgerIngredient $ingredient
-     * @return Ingredient
-     */
-    public function addIngredient(\FiveMinTo\BurgerBundle\Entity\BurgerIngredient $ingredient)
-    {
-        $this->ingredient[] = $ingredient;
-    
-        return $this;
-    }
-
-    /**
-     * Remove ingredient
-     *
-     * @param \FiveMinTo\BurgerBundle\Entity\BurgerIngredient $ingredient
-     */
-    public function removeIngredient(\FiveMinTo\BurgerBundle\Entity\BurgerIngredient $ingredient)
-    {
-        $this->ingredient->removeElement($ingredient);
-    }
-
-    /**
-     * Get ingredient
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getIngredient()
-    {
-        return $this->ingredient;
-    }
 }
