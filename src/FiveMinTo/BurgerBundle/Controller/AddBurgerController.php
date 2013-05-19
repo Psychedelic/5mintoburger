@@ -36,11 +36,6 @@ class AddBurgerController extends Controller
 	    		  
 	    	$em->persist($burger);
 	    	$em->flush();  	
-	    	
-	    	foreach($burger->getBurgerIngredient() as $bi) {
-		    	$em->persist($bi);		    	
-   		    	$em->flush();
-	    	}
     	}
     	
         return $this->render('FiveMinToBurgerBundle:Default:addBurger.html.twig', array(
