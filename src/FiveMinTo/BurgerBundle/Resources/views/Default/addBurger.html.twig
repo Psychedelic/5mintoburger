@@ -10,7 +10,16 @@
  
   <h1>Ajouter un burger</h1>
   
+<<<<<<< HEAD
   <form action="{{ path("five_min_to_burger_add_burger") }}" method="POST" {{ form_enctype(form) }}>
+=======
+  <form action="{{ path("five_min_to_burger_add_burger") }}" method="post">  	
+  	{{ form_widget(form) }}
+  	<input class="btn btn-primary" type="submit">
+  </form>
+  
+  <hr/>
+>>>>>>> nothing change
 
     {{ form_row(form.titreBurger) }}
     {{ form_row(form.phraseAccrocheBurger) }}
