@@ -24,23 +24,28 @@
     
                 
     <h3>Ajouter les ingrédients</h3>
-    <ul class="tags" data-prototype="{{ form_widget(form.burgerIngredient.vars.prototype)|e }}">
-        {% for tag in form.burgerIngredient %}
-            <li>{{ form_row(tag.quantite) }}{{ form_row(tag.ingredient) }}</li>
+    <ul class="burgerIngrediens" data-prototype="{{ form_widget(form.burgerIngredient.vars.prototype)|e }}">
+        {% for bi in form.burgerIngredient %}
+            <li>{{ form_row(bi.quantite) }}{{ form_row(bi.ingredient) }}</li>
         {% endfor %}
         <script>
 	        // Récupère le div qui contient la collection d'ingredients
-			var collectionHolder = $('ul.tags');
+			var collectionHolder = $('ul.burgerIngrediens');
 			
 			// ajoute un lien "Ajouter un ingredient"
-			var $addTagLink = $('<a href="#" class="add_tag_link">Ajouter un ingredient</a>');
-			var $newLinkLi = $('<li></li>').append($addTagLink);
+			var $addIngredientLink = $('<a href="#" class="add_ingredient_link">Ajouter un ingredient</a>');
+			var $newLinkLi = $('<li></li>').append($addIngredientLink);
 			
 			jQuery(document).ready(function() {
+			    // ajoute un lien de suppression à tous les éléments
+	            collectionHolder.find('li').each(function() {
+	            	addBurgerIngredientFormDeleteLink($(this));
+	            });
+	            
 			    // ajoute l'ancre "Ajouter un ingredient" et li à la balise ul
 			    collectionHolder.append($newLinkLi);
-			
-			    $addTagLink.on('click', function(e) {
+		
+			    $addIngredientLink.on('click', function(e) {
 			        // empêche le lien de créer un « # » dans l'URL
 			        e.preventDefault();
 			
@@ -50,6 +55,8 @@
 			});
         </script>
     </ul>
+    
+    <input type="submit" name="validerCreationBurger" value="Valider">
 </form>
 
 <script>
@@ -64,7 +71,23 @@
 	    // Affiche le formulaire dans la page dans un li, avant le lien "Ajouter un ingredient"
 	    var $newFormLi = $('<li></li>').append(newForm);
 	    $newLinkLi.before($newFormLi);
+	    
+	    addBurgerIngredientFormDeleteLink($newFormLi);
+
     }
+    
+    function addBurgerIngredientFormDeleteLink($burgerIngredientFormLi) {
+	    var $removeFormA = $('<a href="#">Supprimer cet ingrédient</a>');
+	    $burgerIngredientFormLi.append($removeFormA);
+	
+	    $removeFormA.on('click', function(e) {
+	        // empêche le lien de créer un « # » dans l'URL
+	        e.preventDefault();
+	
+	        // supprime l'élément li pour le formulaire BurgerIngredient
+	        $burgerIngredientFormLi.remove();
+	    });
+	}
 </script>
    
 {% endblock %}

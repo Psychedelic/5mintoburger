@@ -23,7 +23,7 @@ class Burger
 	}
 	
 	/**
-     * @ORM\OneToMany(targetEntity="FiveMinTo\BurgerBundle\Entity\BurgerIngredient", mappedBy="burger")
+     * @ORM\OneToMany(targetEntity="FiveMinTo\BurgerBundle\Entity\BurgerIngredient", mappedBy="burger", cascade={"persist"})
      */
     private $burgerIngredient;
 

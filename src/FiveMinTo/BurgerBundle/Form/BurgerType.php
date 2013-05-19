@@ -25,6 +25,7 @@ class BurgerType extends AbstractType
             ->add('burgerIngredient', 'collection', array(
                 'type' => new BurgerIngredientType(),
                 'allow_add' => true,
+                'allow_delete' => true,
                 'by_reference' => false,	
             ));
     }
