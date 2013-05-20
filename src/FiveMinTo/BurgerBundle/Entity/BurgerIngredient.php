@@ -12,7 +12,7 @@ class BurgerIngredient
 	
     /**
      * @ORM\Id
-     * @ORM\ManyToOne(targetEntity="FiveMinTo\BurgerBundle\Entity\Burger")
+     * @ORM\ManyToOne(targetEntity="FiveMinTo\BurgerBundle\Entity\Burger", inversedBy="burgerIngredient", cascade={"persist"})
      */
     private $burger;
 

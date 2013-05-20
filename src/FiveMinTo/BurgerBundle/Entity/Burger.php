@@ -28,7 +28,9 @@ class Burger
     private $burgerIngredient;
 
 	/**
-	 * @ORM\OneToOne(targetEntity="FiveMinTo\BurgerBundle\Entity\Vote")
+	 * @var FiveMinTo\BurgerBundle\Entity\Vote
+ 	 *
+	 * @ORM\OneToOne(targetEntity="FiveMinTo\BurgerBundle\Entity\Vote", cascade={"persist", "merge", "remove"})
 	 * @ORM\JoinColumn(name="vote_id", referencedColumnName="id")
 	 */
 	 private $vote;
@@ -111,7 +113,6 @@ class Burger
      * @ORM\Column(name="metaTitle", type="text", nullable=true)
      */
     private $metaTitle;
-
 
     /**
      * Get id

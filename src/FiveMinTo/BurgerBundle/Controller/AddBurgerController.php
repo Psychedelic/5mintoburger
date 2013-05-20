@@ -36,6 +36,16 @@ class AddBurgerController extends Controller
 	    		  
 	    	$em->persist($burger);
 	    	$em->flush();  	
+	    	
+/*
+	    	$burgerRepo = new BurgerRepository();
+	    	foreach($burger->getBurgerIngredient() as $bi) {
+		    	$bi->burger->id = 1;
+		    	$em->persist($bi);		    	
+   		    	$em->flush();
+	    	}
+*/
+
     	}
     	
         return $this->render('FiveMinToBurgerBundle:Default:addBurger.html.twig', array(
