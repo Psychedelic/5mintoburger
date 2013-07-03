@@ -19,11 +19,6 @@ class AddBurgerController extends Controller
 		
 		$burger = new Burger();
 
-        $bi1 = new BurgerIngredient();
-        $burger->addBurgerIngredient($bi1);
-        $bi2 = new BurgerIngredient();
-        $burger->addBurgerIngredient($bi1);
-
         $form = $this->createForm(new BurgerType(), $burger);
 		
 		$request = $this->getRequest();
@@ -32,20 +27,10 @@ class AddBurgerController extends Controller
 	    	$burger = $form->getData();
 	    		    
 	    	$em->persist($burger->getVote());
-	    	$em->flush();
+	    	//$em->flush();
 	    		  
 	    	$em->persist($burger);
-	    	$em->flush();  	
-	    	
-/*
-	    	$burgerRepo = new BurgerRepository();
-	    	foreach($burger->getBurgerIngredient() as $bi) {
-		    	$bi->burger->id = 1;
-		    	$em->persist($bi);		    	
-   		    	$em->flush();
-	    	}
-*/
-
+	    	$em->flush(); 
     	}
     	
         return $this->render('FiveMinToBurgerBundle:Default:addBurger.html.twig', array(

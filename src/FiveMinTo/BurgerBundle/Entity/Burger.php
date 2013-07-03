@@ -23,7 +23,7 @@ class Burger
 	}
 	
 	/**
-     * @ORM\OneToMany(targetEntity="FiveMinTo\BurgerBundle\Entity\BurgerIngredient", mappedBy="burger", cascade={"persist"})
+     * @ORM\OneToMany(targetEntity="FiveMinTo\BurgerBundle\Entity\BurgerIngredient", mappedBy="burger", cascade={"persist", "merge", "remove"}) 
      */
     private $burgerIngredient;
 
@@ -386,6 +386,7 @@ class Burger
      */
     public function addBurgerIngredient(\FiveMinTo\BurgerBundle\Entity\BurgerIngredient $burgerIngredient)
     {
+    	$burgerIngredient->setBurger($this);
         $this->burgerIngredient[] = $burgerIngredient;
     
         return $this;

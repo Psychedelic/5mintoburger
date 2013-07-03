@@ -9,16 +9,25 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class BurgerIngredient
 {
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
 	
     /**
-     * @ORM\Id
-     * @ORM\ManyToOne(targetEntity="FiveMinTo\BurgerBundle\Entity\Burger", inversedBy="burgerIngredient", cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="FiveMinTo\BurgerBundle\Entity\Burger")
+     * @ORM\JoinColumn(name="burger_id", referencedColumnName="id")
      */
     private $burger;
 
     /**
-     * @ORM\Id
      * @ORM\ManyToOne(targetEntity="FiveMinTo\BurgerBundle\Entity\Ingredient")
+     * @ORM\JoinColumn(name="ingredient_id", referencedColumnName="id")
      */
     private $ingredient;
 
