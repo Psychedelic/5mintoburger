@@ -5,3 +5,7 @@ five_min_to_burger_homepage:
 five_min_to_burger_add_burger:
     pattern:  /addBurger
     defaults: { _controller: FiveMinToBurgerBundle:AddBurger:addBurger }
+    
+five_min_to_burger_display_burger:
+    pattern:  /displayBurger
+    defaults: { _controller: FiveMinToBurgerBundle:DisplayBurger:displayBurger }
