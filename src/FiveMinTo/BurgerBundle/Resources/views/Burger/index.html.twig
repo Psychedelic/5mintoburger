@@ -1,22 +1,13 @@
 {% extends '::base.html.twig' %}
 
 {% block body -%}
-    <h1>Burger list</h1>
+    <h1>Liste des Burgers</h1>
 
-    <table class="records_list">
+    <table class="table records_list">
         <thead>
             <tr>
                 <th>Id</th>
                 <th>Titreburger</th>
-                <th>Phraseaccrocheburger</th>
-                <th>Phrasefinaleburger</th>
-                <th>Urlphotoburger</th>
-                <th>Urlvideoburger</th>
-                <th>Descriptionburger</th>
-                <th>Datecreationburger</th>
-                <th>Metakeywords</th>
-                <th>Metadescription</th>
-                <th>Metatitle</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -25,35 +16,17 @@
             <tr>
                 <td><a href="{{ path('burger_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
                 <td>{{ entity.titreBurger }}</td>
-                <td>{{ entity.phraseAccrocheBurger }}</td>
-                <td>{{ entity.phraseFinaleBurger }}</td>
-                <td>{{ entity.urlPhotoBurger }}</td>
-                <td>{{ entity.urlVideoBurger }}</td>
-                <td>{{ entity.descriptionBurger }}</td>
-                <td>{% if entity.dateCreationBurger %}{{ entity.dateCreationBurger|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>{{ entity.metaKeywords }}</td>
-                <td>{{ entity.metaDescription }}</td>
-                <td>{{ entity.metaTitle }}</td>
                 <td>
-                <ul>
-                    <li>
-                        <a href="{{ path('burger_show', { 'id': entity.id }) }}">show</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('burger_edit', { 'id': entity.id }) }}">edit</a>
-                    </li>
-                </ul>
+                 <a class="btn" href="{{ path('burger_show', { 'id': entity.id }) }}"><i class="icon-eye-open"></i></a>
+                 <a class="btn" href="{{ path('burger_edit', { 'id': entity.id }) }}"><i class="icon-pencil"></i></a>
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-        <ul>
-        <li>
-            <a href="{{ path('burger_new') }}">
-                Create a new entry
-            </a>
-        </li>
-    </ul>
-    {% endblock %}
+    <a class="btn" href="{{ path('burger_new') }}">
+       <i class="icon-plus"></i>
+       Créer un nouveau Burger
+    </a>
+{% endblock %}
