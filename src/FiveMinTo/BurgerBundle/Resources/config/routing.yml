@@ -9,3 +9,11 @@ five_min_to_burger_add_burger:
 five_min_to_burger_display_burger:
     pattern:  /displayBurger
     defaults: { _controller: FiveMinToBurgerBundle:DisplayBurger:displayBurger }
+    
+five_min_to_burger_besty_burger:
+    pattern:  /bestBurger
+    defaults: { _controller: FiveMinToBurgerBundle:BestBurger:bestBurger }
+    
+five_min_to_burger_remove_burger:
+    pattern:  /removeBurger
+    defaults: { _controller: FiveMinToBurgerBundle:RemoveBurger:removeBurger }

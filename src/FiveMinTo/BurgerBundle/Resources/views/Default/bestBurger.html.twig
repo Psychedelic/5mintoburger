@@ -1,0 +1,14 @@
+{# src/FiveMinTo/BurgerBundle/Resources/views/layout.html.twig #}
+ 
+{% extends "::layout.html.twig" %}
+ 
+{% block title %}
+  {{ parent() }} - Les Burgers
+{% endblock %}
+ 
+{% block body %}
+
+<h1Best burger!</h1>
+<p>{{bestBurger.titreBurger}}<p>
+    
+{% endblock %}
