@@ -33,7 +33,7 @@ class Burger
 	 * @ORM\OneToOne(targetEntity="FiveMinTo\BurgerBundle\Entity\Vote", cascade={"persist", "merge", "remove"})
 	 * @ORM\JoinColumn(name="vote_id", referencedColumnName="id", onDelete="CASCADE")
 	 */
-	 private $vote;
+	private $vote;
 	
     /**
      * @var integer
@@ -122,6 +122,13 @@ class Burger
     public function getId()
     {
         return $this->id;
+    }
+
+    public function setId($id)
+    {
+	    $this->id = $id;
+	    
+	    return $this;
     }
 
     /**
