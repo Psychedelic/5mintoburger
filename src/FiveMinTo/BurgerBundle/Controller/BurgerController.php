@@ -154,8 +154,9 @@ class BurgerController extends Controller
         $deleteForm = $this->createDeleteForm($id);
         $editForm = $this->createForm(new BurgerType(), $entity);
         $editForm->bind($request);
-
-        if ($editForm->isValid()) {
+  
+    	if($request->isMethod('PUT')){
+        	$entity = $editForm->getData();
             $em->persist($entity);
             $em->flush();
 
