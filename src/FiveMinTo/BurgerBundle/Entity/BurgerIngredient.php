@@ -21,13 +21,13 @@ class BurgerIngredient
 	
     /**
      * @ORM\ManyToOne(targetEntity="FiveMinTo\BurgerBundle\Entity\Burger")
-     * @ORM\JoinColumn(name="burger_id", referencedColumnName="id", onDelete="CASCADE")
+     * @ORM\JoinColumn(name="burger_id", referencedColumnName="id")
      */
     private $burger;
 
     /**
      * @ORM\ManyToOne(targetEntity="FiveMinTo\BurgerBundle\Entity\Ingredient")
-     * @ORM\JoinColumn(name="ingredient_id", referencedColumnName="id", onDelete="CASCADE")
+     * @ORM\JoinColumn(name="ingredient_id", referencedColumnName="id")
      */
     private $ingredient;
 

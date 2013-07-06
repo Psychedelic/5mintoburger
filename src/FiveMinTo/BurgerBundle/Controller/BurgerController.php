@@ -44,22 +44,24 @@ class BurgerController extends Controller
      */
     public function createAction(Request $request)
     {
-        $entity  = new Burger();
-        $form = $this->createForm(new BurgerType(), $entity);
-        $form->bind($request);
+		$em = $this->getDoctrine()->getManager();
+		
+		$burger = new Burger();
 
-        if ($form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($entity);
-            $em->flush();
+        $form = $this->createForm(new BurgerType(), $burger);
+        		
+		$request = $this->getRequest();
+    	if($request->isMethod('POST')){
+	    	$form->bindRequest($request);	    	
+	    	$burger = $form->getData();
+	    		    
+	    	$em->persist($burger->getVote());
 
-            return $this->redirect($this->generateUrl('burger_show', array('id' => $entity->getId())));
-        }
-
-        return array(
-            'entity' => $entity,
-            'form'   => $form->createView(),
-        );
+	    	$em->persist($burger);
+	    	$em->flush(); 
+    	}
+    	
+        return $this->redirect($this->generateUrl('burger'));
     }
 
     /**
