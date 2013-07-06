@@ -2,6 +2,7 @@
 
 namespace FiveMinTo\BurgerBundle\Entity;
 
+use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityRepository;
 
 /**
