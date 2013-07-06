@@ -31,7 +31,7 @@ class Burger
 	 * @var FiveMinTo\BurgerBundle\Entity\Vote
  	 *
 	 * @ORM\OneToOne(targetEntity="FiveMinTo\BurgerBundle\Entity\Vote", cascade={"persist", "merge", "remove"})
-	 * @ORM\JoinColumn(name="vote_id", referencedColumnName="id")
+	 * @ORM\JoinColumn(name="vote_id", referencedColumnName="id", onDelete="CASCADE")
 	 */
 	private $vote;
 	
