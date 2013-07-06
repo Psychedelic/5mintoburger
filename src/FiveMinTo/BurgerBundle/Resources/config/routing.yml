@@ -2,6 +2,16 @@ five_min_to_burger_homepage:
     pattern:  /hello/{name}
     defaults: { _controller: FiveMinToBurgerBundle:Default:index }
 
+<<<<<<< HEAD
 five_min_to_burger_bundle: 
     resource: "@FiveMinToBurgerBundle/Controller/" 
     type:     annotation 
+=======
+five_min_to_burger_add_burger:
+    pattern:  /addBurger
+    defaults: { _controller: FiveMinToBurgerBundle:AddBurger:addBurger }
+    
+five_min_to_burger_display_burger:
+    pattern:  /displayBurger
+    defaults: { _controller: FiveMinToBurgerBundle:DisplayBurger:displayBurger }
+>>>>>>> 81b5afc826d4216e97138f9ab8406217795d0d3c
