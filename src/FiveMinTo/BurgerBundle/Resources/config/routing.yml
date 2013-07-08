@@ -5,3 +5,7 @@ five_min_to_burger_homepage:
 five_min_to_burger_bundle: 
     resource: "@FiveMinToBurgerBundle/Controller/" 
     type:     annotation 
+    
+five_min_to_burger_request:
+    pattern:  /request
+    defaults: { _controller: FiveMinToBurgerBundle:Request:request }

@@ -1,0 +1,16 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+	<h1>Best Burger</h1>
+		{% for bestBurger in bestBurger %} 
+                <tr>
+                	<td>{{bestBurger.id}}</td>
+                </tr>
+            {% endfor %}
+
+	
+	
+	<h1>New Burger</h1>
+
+	
+{% endblock %}

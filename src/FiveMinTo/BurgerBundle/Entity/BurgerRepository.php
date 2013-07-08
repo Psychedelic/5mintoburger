@@ -13,4 +13,21 @@ use Doctrine\ORM\EntityRepository;
  */
 class BurgerRepository extends EntityRepository
 {
+	/*
+	 * Get best burger according the vote
+	 */
+	public function getBestBurger(){
+		
+		$query = $this->_em->createQuery('SELECT b FROM FiveMinToBurgerBundle:Burger b WHERE b.id=1');
+		$results = $query->getResult();
+		foreach($results as $result){
+			$result->getAttribut();
+		}
+		
+		return $results;
+	}
+	
+	
+	
+	
 }
