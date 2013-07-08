@@ -9,6 +9,11 @@
       <link rel="stylesheet" href="{{ asset('bundles/fiveminto/css/bootstrap.min.css') }}" type="text/css" />
     {% endblock %}
     
+    {% block javascript %}
+      <script type="text/javascript" src="{{ asset('bundles/fiveminto/js/jquery-1.9.1.min.js') }}"></script>
+      <script type="text/javascript" src="{{ asset('bundles/fiveminto/js/bootstrap.min.js') }}"></script>
+    {% endblock %}
+    
   </head>
  
   <body>
@@ -43,8 +48,5 @@
 	</div>
   </div>
   </body>
-  {% block javascript %}
-    <script type="text/javascript" src="{{ asset('bundles/fiveminto/js/jquery-1.9.1.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('bundles/fiveminto/js/bootstrap.min.js') }}"></script>
-  {% endblock %}
+
 </html>
