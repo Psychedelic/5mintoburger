@@ -3,12 +3,16 @@
 namespace FiveMinTo\BurgerBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * Ingredient
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="FiveMinTo\BurgerBundle\Entity\IngredientRepository")
+ * @UniqueEntity("nomIngredientSingulier")
+ * @UniqueEntity("nomIngredientPluriel")
+ * @UniqueEntity("id")
  */
 class Ingredient
 {

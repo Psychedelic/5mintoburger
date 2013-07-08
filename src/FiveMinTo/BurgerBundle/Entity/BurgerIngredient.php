@@ -3,9 +3,11 @@
 namespace FiveMinTo\BurgerBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Entity(repositoryClass="FiveMinTo\BurgerBundle\Entity\BurgerIngredientRepository")
+ * @UniqueEntity("ingredient")
  */
 class BurgerIngredient
 {
@@ -27,7 +29,7 @@ class BurgerIngredient
 
     /**
      * @ORM\ManyToOne(targetEntity="FiveMinTo\BurgerBundle\Entity\Ingredient")
-     * @ORM\JoinColumn(name="ingredient_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="ingredient_id", referencedColumnName="id", unique=true)
      */
     private $ingredient;
 
