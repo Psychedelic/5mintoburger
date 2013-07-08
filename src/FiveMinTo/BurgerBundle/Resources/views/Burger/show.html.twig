@@ -49,6 +49,12 @@
                 <th>Metatitle</th>
                 <td>{{ entity.metaTitle }}</td>
             </tr>
+            {% for burgerIngredient in listeIngredients %} 
+                <tr>
+                	<td>{{burgerIngredient.quantite}}</td>
+                	<td>{{burgerIngredient.ingredient.nomIngredientSingulier}}</td>
+                </tr>
+            {% endfor %}
         </tbody>
     </table>
 

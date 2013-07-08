@@ -98,12 +98,15 @@ class BurgerController extends Controller
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Burger entity.');
         }
+        
+        $listeIngredients = $em->getRepository('FiveMinToBurgerBundle:BurgerIngredient')->findByBurger($id);
 
         $deleteForm = $this->createDeleteForm($id);
 
         return array(
-            'entity'      => $entity,
-            'delete_form' => $deleteForm->createView(),
+        	'listeIngredients' 	=> $listeIngredients,
+            'entity'      		=> $entity,
+            'delete_form'	 	=> $deleteForm->createView(),
         );
     }
 
